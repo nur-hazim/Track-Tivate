@@ -1,0 +1,151 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Trace Tivate
+    </title>
+    <!-- Specify character encoding for the web pages-->
+    <meta charset="utf-8" />
+    <!--Set the initial view zooming scale for mobile device to 1-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--Reference to Bootstrap CSS,JavaScript/Jquery files-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .auto-style1 {
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./Account.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HxNm1AD2SpSRRa0+ZtT7ZPxj7CKS909g3SvfS4z9Dn5C1tBwV06X8GxwcBvhBU4AiigwPObQftam/UPiDXOb0q5Z8yVAMyqTU8QU51c6vqIUE99QqB8/ViKWz7fuGCTN8JPP50Dh9L+jN2qT8+A0zEdY0vAFZ4tL3RSo5amiB7wfaxlU0ts+0JWDBAS67Q48v+S+T1F4RG1MyY7auRbda0+b8h2jp5c3v7K9iXjDHoMImPL7qqnPA1FIb4GX8ThF/1PvddbXN9RVZuD3bR+M/3oQpQOU7ujn10iMUqAPmpezJ5IMS9Dt6vSq77a7spwc0xN1b2HgiBwzTDJZjU9pGLLoU+w3bImpkBft/Hnd/CUQPQ+GWE16n944LiomKmlbGFuO50vne9rWxezQT7pNdl+HBCcTwr3sgTrmvatpaSr6GzZtqBs5dHi0kvLeLcysZutPppKo2rPd+NmKceYtYO7hDSzY5vE0xRhI5LS8LvbV6zv+HRhQSrGhbzDMx4QVg4trQEap1PoH8IFKSNiBFenIKMmGMJ7O1fnT4oRbJfg=" />
+        </div>
+
+        <!--bootstrap container,centralize the container between margins-->
+        <div class="container" style="margin:auto;">
+            <!--1st row-->
+            <div class="row">
+                <div class="col-sm-12">
+
+
+                    <nav class="navbar navbar-default">
+                        <div>
+                            <!--navbar wrapper-->
+                            <div class="navbar-header">
+                                <!--Navbar to be displayed as a hamburger button when collapsed-->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#staffNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--The brand(or icon) of the navbar, will always be displayed-->
+                                <a class="navbar-brand" href="/"
+                                   style="font-size:36px; font-weight:bold; color:#3399FF;">
+                                    Trace Tivate
+                                </a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="staffNavbar">
+                                <!--links in the navbar,-->
+                                <!-- will be displayed as drop down list when collapsed-->
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/Home/Explore">Explore</a></li>
+                                    <li><a href="/Home/Payment">Payment</a></li>
+                                    <li><a href="/Home/Account">Account</a></li>
+                                    <li><a href="Promotion.aspx">Promotion</a></li>
+
+                                </ul>
+                                @Html.Partial("_LoginPartial")
+                            </div>
+
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+
+            <!--3rd row-->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <table class="nav-justified">
+                        <tr>
+                            <td>
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/profile%20(1).png" width="32" height="32"></a>
+                                My Profile
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/edit.png" width="32" height="32"></a>
+                                Modify Bio
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/>settings-work-tool.png" width="32" height="32"></a>
+                                Account Recovery
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/key.png" width="32" height="32"></a>
+                                Change Password
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/group-of-people-in-a-formation.png" width="32" height="32"></a>
+                                Social
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/credit-card.png" width="32" height="32"></a>
+                                Card info
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">
+                                <a href="/"><img border="0" alt="W3Schools" src="~/Content/images/history.png" width="32" height="32"></a>
+                                Purchase History
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+            <!--4th row-->
+            <div class="row">
+                <div class="col-sm-12">
+                </div>
+            </div>
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1D5EA448" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="aIqoO4Sejg9suHAK6RcuUE+ehKNJkhRUifa2zZBrJ56+0CFuRRXs1yRquiDJlYRuJ8WjMzTyOMpBt65gn99bwNxvdGSOyV719agFjXAsfcVdkW8ZOgF7wmGIY+/eXbHv/RllhG7fz2aSet5tzv9ecNcVmkSR9q7VXNuLCEhVLVMeNcj4VrqM4+rt9TnP0d5Ht1HmbXtjLaEe9ywlNnR4DCQRoVQQLzibkjIXjVlct7y+tfjKszaAB6L6so7h82NHOlJalk0B4gu4Jm7BZV9MUA==" />
+        </div>
+    </form>
+
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Chrome","requestId":"7c40355bbd9541ed94c0c7ac26ab04f1"}
+    </script>
+    <script type="text/javascript" src="http://localhost:30227/95e7c60bdc6c41e58490c3297d0d6c57/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>

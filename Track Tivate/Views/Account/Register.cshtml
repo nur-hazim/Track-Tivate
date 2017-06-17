@@ -1,0 +1,104 @@
+﻿@model Track_Tivate.Models.RegisterViewModel
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Trace Tivate
+    </title>
+    <!-- Specify character encoding for the web pages-->
+    <meta charset="utf-8" />
+    <!--Set the initial view zooming scale for mobile device to 1-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--Reference to Bootstrap CSS,JavaScript/Jquery files-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!--bootstrap container,centralize the container between margins-->
+        <div class="container" style="margin:auto;">
+            <!--1st row-->
+            <div class="row">
+                <div class="col-sm-12">
+
+
+                    <nav class="navbar navbar-default">
+                        <div>
+                            <!--navbar wrapper-->
+                            <div class="navbar-header">
+                                <!--Navbar to be displayed as a hamburger button when collapsed-->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#staffNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--The brand(or icon) of the navbar, will always be displayed-->
+                                <a class="navbar-brand" href="/"
+                                   style="font-size:36px; font-weight:bold; color:#3399FF;">
+                                    Trace Tivate
+                                </a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="staffNavbar">
+                                <!--links in the navbar,-->
+                                <!-- will be displayed as drop down list when collapsed-->
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/Home/Explore">Explore</a></li>
+                                    <li><a href="/Home/Payment">Payment</a></li>
+                                    <li><a href="/Home/Account">Account</a></li>
+                                    <li><a href="Promotion.aspx">Promotion</a></li>
+                                </ul>
+
+                                @Html.Partial("_LoginPartial")
+
+                            </div>
+
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+
+
+            <h1>Register Now (Its Free)</h1>
+
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Register" />
+                    </div>
+                </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+</body>
+</html>

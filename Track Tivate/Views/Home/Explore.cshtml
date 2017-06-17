@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Trace Tivate
+    </title>
+    <!-- Specify character encoding for the web pages-->
+    <meta charset="utf-8" />
+    <!--Set the initial view zooming scale for mobile device to 1-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--Reference to Bootstrap CSS,JavaScript/Jquery files-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+
+</head>
+<body>
+    <form method="post" action="./Main.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="3oLK4b05j1Uk8CrH7TlAEi4m3Cjgb5aStEfeIrCkABUV02e0xG9is9Y4L7hdADWKAgraH1EPzZthNpFpGkOMB0buLMAhytXADtjvxTp7Mao=" />
+        </div>
+
+        <!--bootstrap container,centralize the container between margins-->
+        <div class="container" style="margin:auto;">
+            <!--1st row-->
+            <div class="row">
+                <div class="col-sm-12">
+
+
+                    <nav class="navbar navbar-default">
+                        <div>
+                            <!--navbar wrapper-->
+                            <div class="navbar-header">
+                                <!--Navbar to be displayed as a hamburger button when collapsed-->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#staffNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--The brand(or icon) of the navbar, will always be displayed-->
+                                <a class="navbar-brand" href="/"
+                                   style="font-size:36px; font-weight:bold; color:#3399FF;">
+                                    Trace Tivate
+                                </a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="staffNavbar">
+                                <!--links in the navbar,-->
+                                <!-- will be displayed as drop down list when collapsed-->
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/Home/Explore">Explore</a></li>
+                                    <li><a href="/Home/Payment">Payment</a></li>
+                                    <li><a href="/Home/Account">Account</a></li>
+                                    <li><a href="Promotion.aspx">Promotion</a></li>
+                                </ul>
+
+                                @Html.Partial("_LoginPartial")
+
+                            </div>
+
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+            <div id="map" style="width: 100%; height: 400px; background: grey" />
+            <script type="text/javascript" charset="UTF-8">
+    /**
+ * Shows how to add venue objects to the map, change default styling
+ * and change a floor level for all venues.
+ */
+        function addLayer(map, platform, renderControls) {
+            // Create a tile layer, which will display venues
+            var customLayer = platform.getVenueService().createTileLayer({
+                // Provide a callback that will be called for each newly created space
+                onSpaceCreated: onSpaceCreated
+            });
+
+            // Get TileProvider from Venue Layer
+            var venueProvider = customLayer.getProvider();
+            // Add venues layer to the map
+            map.addLayer(customLayer);
+
+            // Use the custom function (i.e. not a part of the API)
+            // to render buttons with corresponding click callbacks
+            renderControls('Levels' ,
+
+                {
+    '+': function () {venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() + 1);},
+    '-': function () { venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() - 1); }
+
+
+  });
+}
+
+function onSpaceCreated(space) {
+  // getData for spaces contains data from the Venue Interaction Tile API,
+  if (space.getData().preview === 'H&M') {
+    space.setStyle({
+      fillColor: 'rgba(0,255,0,0.3)'
+    });
+  }
+}
+
+/**
+ * Boilerplate map initialization code starts below:
+ */
+
+// Step 1: initialize communication with the platform
+var platform = new H.service.Platform({
+    app_id: "QkBj8uc0nOWRvdIumd5w",
+    app_code: "n0Cu7e4K2g3pNDf7zKF0EQ",
+  useCIT: false,
+  useHTTPS: true
+});
+var defaultLayers = platform.createDefaultLayers();
+
+// Step 2: initialize a map
+var map = new H.Map(document.getElementById('map'), defaultLayers.normal.map, {
+  // initial center and zoom level of the map
+    center: new H.geo.Point(1.2940, 103.8533),
+  zoom: 19
+});
+
+// Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+// Step 4: Create the default UI:
+var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+
+// Template function for displaying controls with a heading and buttons
+function renderControls(title, buttons) {
+  var containerNode = document.createElement('div');
+
+  containerNode.innerHTML = '<h4 class="title">' + title + '</h4><div class="btn-group"></div>';
+  containerNode.setAttribute('style',
+      'position:absolute;top:0;left:0;background-color:#fff; padding:10px;text-align:center');
+
+  Object.keys(buttons).forEach(function (label) {
+    var input = document.createElement('input');
+    input.value = label;
+    input.type = 'button';
+    input.onclick = buttons[label];
+    input.className="btn btn-sm btn-default"
+    containerNode.lastChild.appendChild(input);
+  });
+
+  map.getElement().appendChild(containerNode);
+}
+
+// Step 5: main logic goes here
+addLayer(map, platform, renderControls);
+            </script>
+
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="202EA31B" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="2xX2OI3I6Xi4bkd2m2ZlsVa5f/Ny7f3xzfTrmComNZc2qjtxDNLwIVp/8uxbMfZwqiNChsl98axYWaDxqgZYrJvhfyFdt3Vxu8+CEvyLteHqoAZHk4r9XxyV/Ud2evhc" />
+        </div>
+    </form>
+
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Chrome","requestId":"f6359a40b10849f78782e79666994f6e"}
+    </script>
+    <script type="text/javascript" src="http://localhost:23707/aef6d27c659640a0bb66891e1357a6cc/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>
