@@ -29,5 +29,15 @@ namespace Track_Tivate.Controllers
         {
             return View();
         }
+
+        public ActionResult Emergency()
+        {
+            return View();
+        }
+
+        public ActionResult Promotion()
+        {
+            return View();
+        }
     }
 }

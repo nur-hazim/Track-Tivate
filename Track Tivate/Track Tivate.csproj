@@ -215,8 +215,13 @@
     <Content Include="Content\images\group-of-people-in-a-formation.png" />
     <Content Include="Content\images\history.png" />
     <Content Include="Content\images\key.png" />
+    <Content Include="Content\images\label.png" />
+    <Content Include="Content\images\mall-foodcourt-map.png" />
     <Content Include="Content\images\profile %281%29.png" />
     <Content Include="Content\images\profile.png" />
+    <Content Include="Content\images\rose.png" />
+    <Content Include="Content\images\sale.png" />
+    <Content Include="Content\images\saleposter.png" />
     <Content Include="Content\images\settings-work-tool.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -280,6 +285,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Explore.cshtml" />
+    <Content Include="Views\Home\Emergency.cshtml" />
+    <Content Include="Views\Home\Promotion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

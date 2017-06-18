@@ -1,0 +1,176 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Trace Tivate
+    </title>
+    <!-- Specify character encoding for the web pages-->
+    <meta charset="utf-8" />
+    <!--Set the initial view zooming scale for mobile device to 1-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--Reference to Bootstrap CSS,JavaScript/Jquery files-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 464px;
+        }
+
+        .auto-style2 {
+            width: 32px;
+            height: 32px;
+        }
+
+        .auto-style4 {
+            width: 338px;
+            height: 253px;
+        }
+
+        .auto-style5 {
+            width: 425px;
+            height: 240px;
+        }
+
+        .auto-style6 {
+            width: 464px;
+            height: 20px;
+        }
+
+        .auto-style7 {
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./promotion.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="yJ726dFjbkyUn/3mqqMj3q+ki9P0LqhaGV/m+CBBQJkTemgunFfgmB0E70jhU/F4AXAYarB3C5NXx7DJ/gsb73mon+8f3oa2/foOCsK2xNg=" />
+        </div>
+
+        <!--bootstrap container,centralize the container between margins-->
+        <div class="container" style="margin:auto;">
+            <!--1st row-->
+            <div class="row">
+                <div class="col-sm-12">
+
+
+                    <nav class="navbar navbar-default">
+                        <div>
+                            <!--navbar wrapper-->
+                            <div class="navbar-header">
+                                <!--Navbar to be displayed as a hamburger button when collapsed-->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#staffNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--The brand(or icon) of the navbar, will always be displayed-->
+                                <a class="navbar-brand" href="/"
+                                   style="font-size:36px; font-weight:bold; color:#3399FF;">
+                                    Trace Tivate
+                                </a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="staffNavbar">
+                                <!--links in the navbar,-->
+                                <!-- will be displayed as drop down list when collapsed-->
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/Home/Explore">Explore</a></li>
+                                    <li><a href="/Home/Payment">Payment</a></li>
+                                    <li><a href="/Home/Account">Account</a></li>
+                                    <li><a href="/Home/Promotion">Promotion</a></li>
+                                    <li><a href="/Home/Emergency">Emergency</a></li>
+
+                                </ul>
+                                @Html.Partial("_LoginPartial")
+
+
+                            </div>
+
+
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+            <!-- 2nd row-->
+            
+            <!--3rd row-->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <table class="nav-justified">
+                        <tr>
+                            <td class="auto-style1">
+                                <img class="auto-style2" src="~/Content/images/sale.png" />Current Sale
+                            </td>
+                            <td>
+                                <img class="auto-style5" src="~/Content/images/rose.png" /><img class="auto-style4" src="~/Content/images/saleposter.png" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">
+                                <img class="auto-style2" src="~/Content/images/label.png" />PromoCode(enter code):
+                            </td>
+                            <td>
+                                <input name="ctl00$ContentPlaceHolder1$TextBoxpromocode" type="text" id="ContentPlaceHolder1_TextBoxpromocode" />
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$Buttonsubmit" value="submit" id="ContentPlaceHolder1_Buttonsubmit" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h1></h1>
+                                <h1></h1>
+                                <h1></h1>
+                                Balance Remaining: $150
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="auto-style6"></td>
+                            <td class="auto-style7"></td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+            <!--4th row-->
+            <div class="row">
+                <div class="col-sm-12">
+                </div>
+            </div>
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="87CE5D66" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="bCGnddMW8Y2yQ586Yc/gr8DP1b4suHjUCC0W8ipugmhlSkrCL+3Ri7x2jyz3SZxNtk27e++fuqbXoBpeeU7P4YKkadtUCrx4iazDU1X0rVKeWVM9zg6CGlAGZ0P/r3638QtSwrCqXMxbiYx2T1Uu90e5qzAj9y3oZ5Se5IHs9Ls=" />
+        </div>
+    </form>
+
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Chrome","requestId":"7c9b58df24dc48729cfec7463bcc2c3a"}
+    </script>
+    <script type="text/javascript" src="http://localhost:35120/470336c334044d489560665c9e7d73dd/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>

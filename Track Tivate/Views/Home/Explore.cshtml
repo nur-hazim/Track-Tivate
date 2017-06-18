@@ -57,7 +57,8 @@
                                     <li><a href="/Home/Explore">Explore</a></li>
                                     <li><a href="/Home/Payment">Payment</a></li>
                                     <li><a href="/Home/Account">Account</a></li>
-                                    <li><a href="Promotion.aspx">Promotion</a></li>
+                                    <li><a href="/Home/Promotion">Promotion</a></li>
+                                    <li><a href="/Home/Emergency">Emergency</a></li>
                                 </ul>
 
                                 @Html.Partial("_LoginPartial")
@@ -90,7 +91,6 @@
             // Use the custom function (i.e. not a part of the API)
             // to render buttons with corresponding click callbacks
             renderControls('Levels' ,
-
                 {
     '+': function () {venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() + 1);},
     '-': function () { venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() - 1); }
@@ -175,6 +175,70 @@ addLayer(map, platform, renderControls);
     </script>
     <script type="text/javascript" src="http://localhost:23707/aef6d27c659640a0bb66891e1357a6cc/browserLink" async="async"></script>
     <!-- End Browser Link -->
+
+    <div id="list5">
+        <ol>
+            <li>
+                Lifestyle
+                <ol>
+                    <li>AESOP 01-13A 63370072</li>
+                    <li>Alan Photo 03-21 68830922</li>
+                    <li>Browhaus B1-17/18 63370070</li>
+                    <li>Crabtree & Evelyn B1-29 63372474</li>
+                    <li>CRAFTHOLIC 03-09 65321454</li>
+                    <li>Das Erzgebirge-Haus 03-27 63341920</li>
+                    <li>Dead Sea Premier B2-02 63367576</li>
+                    <li>Dermacare Medispa B2-15 63327287</li>
+                    <li>DIOR 01-04/05 63387782</li>
+                    <li>DR HAACH 02-27A 67379193 </li>
+                    <li>DuSol Beauty 03-27A 63384424</li>
+                    <li>Enjoy by Jean Yip B2-22/23 63398125</li>
+                    <li>Eu Yan Sang B1-44H 63389365</li>
+                    <li>FE The Nail Lounge B2-18/19 63377596</li>
+                    <li>FE The Nail Lounge 02-27B 63377595</li>
+                </ol>
+            </li>
+            <li>
+                Digital
+                <ol>
+                    <li>Challenger 03-22/23 63399008</li>
+                    <li>nübox 03-25 63348132</li>
+                    <li>SingTel Exclusive Retailer 03-20 63392272</li>
+                </ol>
+            </li>
+            <li>
+                Dining
+                <ol>
+                    <li>Alligator Pear 08-Fairmont 6431 6156</li>
+                    <li> Andong Zzimdak B1-44F 65333951</li>
+                    <li>Anti:dote 01-Fairmont 6431 5315</li>
+                    <li>Asian Market Cafe 02-Fairmont 6431 5255</li>
+                    <li>Asian Market Cafe 02-Fairmont 6431 5255</li>
+                    <li>Awfully Chocolate B1-52 6338 3527</li>
+                    <li>Barcook B2-17 63376588</li>
+                    <li>Bee Cheng Hiang B1-59 67340744</li>
+                    <li>Bonheur Patisserie B1-72 63363104</li>
+                    <li>Boost Juice Bars B1-51 81576077</li>
+                    <li>BreadTalk & Toastbox B1-44A 63394434</li>
+                </ol>
+            <li>
+                Fashion
+                <ol>
+                    <li>agnés b. 01-26 6334 4910</li>
+                    <li> ALDO 01-07 6336 2533</li>
+                    <li>Alice Claudine B1-K12A/B</li>
+                    <li>APM Monaco 01-43A 63583895</li>
+                    <li>Audemars Piguet & Vacheron Constantin 01-36B 6339 9185</li>
+                    <li>BENNO 03-29B 68845506</li>
+                    <li>Bering / Daniel Wellington B1-K4 63382094</li>
+                    <li>Birkenstock 02-11 62555638</li>
+                    <li>Blancpain 01-36A 63392107</li>
+                    <li>bloomB 03-36 63387827</li>
+                </ol>
+            </li>
+            </li>
+        </ol>
+    </div>
 
 </body>
 </html>
